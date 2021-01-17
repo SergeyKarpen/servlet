@@ -9,7 +9,7 @@ public class Developer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_developer")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "first_name")
@@ -19,6 +19,7 @@ public class Developer {
     private String lastName;
 
     @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id")
     private Set<Skill> skills;
 
     @OneToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)

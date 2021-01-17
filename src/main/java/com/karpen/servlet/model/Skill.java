@@ -8,7 +8,7 @@ public class Skill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_skill", nullable = false)
+    @Column(name = "id", nullable = false)
     Long id;
 
     @Column(name = "name")

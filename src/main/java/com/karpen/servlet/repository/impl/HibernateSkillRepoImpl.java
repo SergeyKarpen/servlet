@@ -1,5 +1,6 @@
 package com.karpen.servlet.repository.impl;
 
+import com.karpen.servlet.model.Account;
 import com.karpen.servlet.model.Skill;
 import com.karpen.servlet.repository.HibernateSkillRepo;
 import com.karpen.servlet.util.HibernateSessionFactory;
@@ -9,7 +10,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class HibernateSkillRepoImpl implements HibernateSkillRepo {
-    private static Session session = null;
+     private static Session session = null;
 
     @Override
     public Skill create(Skill skill) {
@@ -54,7 +55,7 @@ public class HibernateSkillRepoImpl implements HibernateSkillRepo {
             skills = session.createQuery("FROM Skill").list();
             transaction.commit();
         } catch (Throwable ex) {
-            System.err.println("Ошибка при выводе всех навыков(skills). Метод update - ERROR " + ex);
+            System.err.println("Ошибка при выводе всех учёток(accounts). Метод getAll - ERROR " + ex);
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();
