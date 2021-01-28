@@ -64,12 +64,12 @@ public class HibernateAccountRepoImpl implements HibernateAccountRepo {
     }
 
     @Override
-    public void deleteById(Long id_account) {
+    public void deleteById(Long id) {
         Account account = null;
         try {
             session = HibernateSessionFactory.getSessionFactory().openSession();
             session.beginTransaction();
-            account = session.get(Account.class, id_account);
+            account = session.get(Account.class, id);
             session.delete(account);
             session.getTransaction().commit();
         } catch (Throwable ex) {
@@ -95,4 +95,7 @@ public class HibernateAccountRepoImpl implements HibernateAccountRepo {
         }
         return account;
     }
+
+
 }
+

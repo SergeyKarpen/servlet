@@ -16,7 +16,7 @@ public class DeveloperController {
     private final HibernateSkillRepoImpl hibernateSkillRepo = new HibernateSkillRepoImpl();
     private final HibernateDeveloperRepoImpl hibernateDeveloperRepo = new HibernateDeveloperRepoImpl();
 
-    public Developer create(String firstName, String lastName, Long id_account, Set<Long> skillId) throws IOException, SQLException {
+    public Developer create(String firstName, String lastName, Long id_account, Set <Long> skillId) throws IOException, SQLException {
         Developer developer = new Developer();
         Set<Skill> skills = new HashSet<>();
         developer.setFirstName(firstName);
@@ -42,12 +42,10 @@ public class DeveloperController {
         developer.setSkills(skills);
         return hibernateDeveloperRepo.update(developer);
     }
-/*
+
     public Developer getById(Long id) throws IOException, SQLException {
         return hibernateDeveloperRepo.getById(id);
     }
-
- */
 
     public void deleteById(Long id) throws IOException, SQLException {
         hibernateDeveloperRepo.deleteById(id);

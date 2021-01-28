@@ -1,6 +1,5 @@
 package com.karpen.servlet.repository.impl;
 
-import com.karpen.servlet.model.Account;
 import com.karpen.servlet.model.Skill;
 import com.karpen.servlet.repository.HibernateSkillRepo;
 import com.karpen.servlet.util.HibernateSessionFactory;
@@ -70,7 +69,7 @@ public class HibernateSkillRepoImpl implements HibernateSkillRepo {
         try {
             session = HibernateSessionFactory.getSessionFactory().openSession();
             session.beginTransaction();
-            skill = (Skill) session.get(Skill.class, id_skill);
+            skill = session.get(Skill.class, id_skill);
             session.delete(skill);
             session.getTransaction().commit();
         } catch (Throwable ex) {
@@ -86,7 +85,7 @@ public class HibernateSkillRepoImpl implements HibernateSkillRepo {
         Skill skill = null;
         try {
             session = HibernateSessionFactory.getSessionFactory().openSession();
-            skill = (Skill) session.load(Skill.class, id_skill);
+            skill = session.load(Skill.class, id_skill);
         } catch (Throwable ex) {
             System.err.println("Ошибка при нахождении навыка(skill). Метод getById - ERROR " + ex);
         } finally {
@@ -96,5 +95,4 @@ public class HibernateSkillRepoImpl implements HibernateSkillRepo {
         }
         return skill;
     }
-
 }

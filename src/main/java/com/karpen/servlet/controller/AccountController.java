@@ -15,6 +15,7 @@ public class AccountController {
         Account account = new Account();
         account.setContent(content);
         account.setAccountStatus(accountStatus);
+        account.setId(0L);
         return hibernateAccountRepo.create(account);
     }
 
@@ -26,11 +27,10 @@ public class AccountController {
         return hibernateAccountRepo.update(account);
     }
 
-/*
+
     public Account getById(Long id) throws IOException, SQLException {
         return hibernateAccountRepo.getById(id);
     }
- */
 
     public void deleteById(Long id) throws IOException, SQLException {
         hibernateAccountRepo.deleteById(id);

@@ -3,7 +3,7 @@ package com.karpen.servlet.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "account", schema = "servlet")
+@Table(name = "account")
 public class Account {
 
     @Id

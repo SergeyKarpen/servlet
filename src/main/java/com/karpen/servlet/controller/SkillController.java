@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class SkillController {
-
     private final HibernateSkillRepoImpl hibernateSkillRepo = new HibernateSkillRepoImpl();
 
 
@@ -24,12 +23,10 @@ public class SkillController {
         skill.setId(id);
         return hibernateSkillRepo.update(skill);
     }
-/*
+
     public Skill getById(Long id) throws IOException, SQLException {
         return hibernateSkillRepo.getById(id);
     }
-
- */
 
     public void deleteById(Long id) throws IOException, SQLException {
         hibernateSkillRepo.deleteById(id);

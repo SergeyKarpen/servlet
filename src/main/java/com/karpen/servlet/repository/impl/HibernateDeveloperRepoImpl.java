@@ -6,6 +6,7 @@ import com.karpen.servlet.util.HibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HibernateDeveloperRepoImpl implements HibernateDeveloperRepo {
@@ -47,14 +48,14 @@ public class HibernateDeveloperRepoImpl implements HibernateDeveloperRepo {
 
     @Override
     public List<Developer> getAll() {
-        List<Developer> developers = null;
+        List<Developer> developers = new ArrayList<>();
         try {
             session = HibernateSessionFactory.getSessionFactory().openSession();
             Transaction transaction = session.beginTransaction();
             developers = session.createQuery("FROM Developer ").list();
             transaction.commit();
         } catch (Throwable ex) {
-            System.err.println("Ошибка при выводе всех разработчиков(developers). Метод update - ERROR " + ex);
+            System.err.println("Ошибка при выводе всех разработчиков(developers). Метод getAll - ERROR " + ex);
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();
@@ -63,13 +64,20 @@ public class HibernateDeveloperRepoImpl implements HibernateDeveloperRepo {
         return developers;
     }
 
-    /*
-    @Override
-    public Developer getById(Long aLong) {
-        return null;
+    public Developer getById(Long id_developer) {
+        Developer developer = null;
+        try {
+            session = HibernateSessionFactory.getSessionFactory().openSession();
+            developer = session.load(Developer.class, id_developer);
+        } catch (Throwable ex) {
+            System.err.println("Ошибка при нахождении навыка(skill). Метод getById - ERROR " + ex);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return developer;
     }
-
-     */
 
     @Override
     public void deleteById(Long aLong) {
@@ -77,7 +85,7 @@ public class HibernateDeveloperRepoImpl implements HibernateDeveloperRepo {
         try {
             session = HibernateSessionFactory.getSessionFactory().openSession();
             session.beginTransaction();
-            developer = (Developer) session.get(Developer.class, developer.getId());
+            developer = session.get(Developer.class, developer.getId());
             session.delete(developer);
             session.getTransaction().commit();
         } catch (Throwable ex) {
