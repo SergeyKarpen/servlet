@@ -50,7 +50,6 @@ public class AccountServlet extends HttpServlet {
         String json = gson.toJson(accounts);
         assert writer != null;
         writer.println(json);
-        log(OPERATIONSUCCEFSSUL);
     }
 
     @Override
@@ -87,7 +86,7 @@ public class AccountServlet extends HttpServlet {
         }
         assert false;
         writer.print(OPERATIONSUCCEFSSUL);
-        log(OPERATIONSUCCEFSSUL);
+
     }
 
     @Override
@@ -114,7 +113,6 @@ public class AccountServlet extends HttpServlet {
             }
         } else {
             writer.print(ERRORINPUT);
-            log(OPERATIONSUCCEFSSUL);
         }
     }
 
@@ -139,7 +137,6 @@ public class AccountServlet extends HttpServlet {
             try {
                 accountController.update(id, status, content);
                 writer.print(OPERATIONSUCCEFSSUL);
-                log(OPERATIONSUCCEFSSUL);
             } catch (IOException | SQLException e) {
                 e.printStackTrace();
             }

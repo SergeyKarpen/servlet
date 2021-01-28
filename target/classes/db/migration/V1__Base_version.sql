@@ -1,6 +1,6 @@
 create table account
 (
-    id      bigint       not null,
+    id      bigint auto_increment,
     status  varchar(255) null,
     content varchar(255) null,
     constraint account_id_uindex
@@ -12,23 +12,24 @@ alter table account
 
 create table developer
 (
-    id_developer bigint       not null,
-    firstName    varchar(255) null,
-    lastName     varchar(255) null,
+    id_developer bigint auto_increment,
+    first_name    varchar(255) null,
+    last_name     varchar(255) null,
     account_id   bigint       null,
     constraint developer_id_developer_uindex
         unique (id_developer),
     constraint developer_account_id_fk
-        foreign key (id_developer) references account (id)
+        foreign key (account_id) references account (id),
+    constraint FK797nvx3iu2b2h8h56stx30gxy
+        foreign key (account_id) references account (id)
 );
 
 alter table developer
     add primary key (id_developer);
 
-
 create table skill
 (
-    id   bigint       not null,
+    id   bigint auto_increment,
     name varchar(255) null,
     constraint skill_id_uindex
         unique (id)
@@ -39,11 +40,12 @@ alter table skill
 
 create table developer_skill
 (
-    developer_id_developer bigint not null,
-    skill_id_skill         bigint not null,
+    developer bigint not null,
+    skill     bigint not null,
+    primary key (developer, skill),
     constraint developer_skill_developer_id_developer_fk
-        foreign key (developer_id_developer) references developer (id_developer),
+        foreign key (developer) references developer (id_developer),
     constraint developer_skill_skill_id_fk
-        foreign key (skill_id_skill) references skill (id)
+        foreign key (skill) references skill (id)
 );
 

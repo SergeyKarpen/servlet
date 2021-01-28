@@ -62,7 +62,6 @@ public class DeveloperServlet extends HttpServlet {
         Long accountId = Long.valueOf(request.getParameter("accountId"));
         String [] idSkillInString = request.getParameterValues("idSkill");
         Set<Long> setIdSkill = Arrays.stream(request.getParameterValues("idSkill")).map(Long::valueOf).collect(Collectors.toSet());
-        List<Developer> developers = null;
         PrintWriter writer = null;
         assert false;
         assert writer != null;

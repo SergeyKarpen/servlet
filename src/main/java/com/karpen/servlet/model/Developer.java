@@ -8,14 +8,14 @@ import java.util.Set;
 public class Developer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_developer")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_developer", nullable = false)
     private Long id;
 
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
     @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)

@@ -46,8 +46,10 @@ public class SkillServlet extends HttpServlet {
         b.registerTypeAdapterFactory(HibernateProxyTypeAdapter.FACTORY);
         Gson gson = b.create();
         String json = gson.toJson(skills);
+        assert false;
+        assert writer != null;
         writer.println(json);
-        log(OPERATIONSUCCEFSSUL);
+
     }
 
     @Override

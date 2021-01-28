@@ -14,7 +14,7 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">paranido2</property>
 
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
         <mapping class="com.karpen.servlet.model.Skill"/>
         <mapping class="com.karpen.servlet.model.Developer"/>
