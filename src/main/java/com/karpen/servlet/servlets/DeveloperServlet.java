@@ -57,8 +57,8 @@ public class DeveloperServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
+        String firstName = request.getParameter("first_name");
+        String lastName = request.getParameter("last_name");
         Long accountId = Long.valueOf(request.getParameter("accountId"));
         String [] idSkillInString = request.getParameterValues("idSkill");
         Set<Long> setIdSkill = Arrays.stream(request.getParameterValues("idSkill")).map(Long::valueOf).collect(Collectors.toSet());
@@ -104,8 +104,8 @@ public class DeveloperServlet extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long id = Long.valueOf(request.getParameter("id"));
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
+        String firstName = request.getParameter("first_name");
+        String lastName = request.getParameter("last_name");
         Long accountId = Long.valueOf(request.getParameter("accountId"));
         Set<Long> idSkill = Arrays.stream(request.getParameterValues("idSkill")).map(Long::valueOf).collect(Collectors.toSet());
         List<Developer> developers = null;

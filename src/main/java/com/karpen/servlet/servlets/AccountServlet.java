@@ -132,10 +132,25 @@ public class AccountServlet extends HttpServlet {
         writer = response.getWriter();
         assert false;
         assert writer != null;
+        AccountStatus accountStatus = null;
+        switch (status) {
+            case ("active"):
+                status = "ACTIVE";
+                break;
+            case ("deleted"):
+                status = "DELETED";
+                break;
+            case ("banned"):
+                status = "BANNED";
+                break;
+            default:
+                assert false;
+                writer.print(ERRORINPUT);
+        }
         boolean checkId = accounts.stream().anyMatch(p -> p.getId().equals(id));
         if (checkId) {
             try {
-                accountController.update(id, status, content);
+                accountController.update(id, content, status);
                 writer.print(OPERATIONSUCCEFSSUL);
             } catch (IOException | SQLException e) {
                 e.printStackTrace();

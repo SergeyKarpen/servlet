@@ -18,7 +18,13 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <slf4jVersion>2.0</slf4jVersion>
+        <flyway.user>mysql</flyway.user>
+        <flyway.password>paranido2</flyway.password>
+        <flyway.schemas>sevrlet</flyway.schemas>
 
+        <!-- Individual placeholders are prefixed by flyway.placeholders. -->
+        <flyway.placeholders.keyABC>valueXYZ</flyway.placeholders.keyABC>
+        <flyway.placeholders.otherplaceholder>value123</flyway.placeholders.otherplaceholder>
     </properties>
     <dependencies>
 
