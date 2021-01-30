@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* http://www.servletJava.com
+web: java -jar target/servlet-1.0.0.jar
