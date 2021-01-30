@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -war target/salty-lake-15597.herokuapp.com.war
+web: java -Dserver.port=$PORT -war target/servlet-1.0-SNAPSHOT.war
