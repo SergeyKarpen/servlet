@@ -11,7 +11,7 @@
 
     <name>servlet Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+    <url>http://www.servletJava.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -294,8 +294,15 @@
             <!--plugin maven-war-plugin-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.1</version>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals><goal>copy-dependencies</goal></goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <!--migration BD-->
@@ -308,7 +315,6 @@
                     <password>paranido2</password>
                     <driver>com.mysql.cj.jdbc.Driver</driver>
                     <url>jdbc:mysql://localhost/servlet?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</url>
-
                     <schemas>
                         <schema>servlet</schema>
                     </schemas>
