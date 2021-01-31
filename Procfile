@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/servlet-1.0-SNAPSHOT.jar --port $PORT target/*.war
+web: java $JAVA_OPTS -jar --port $PORT target/*.war
