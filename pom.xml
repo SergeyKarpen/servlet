@@ -11,7 +11,7 @@
 
     <name>servlet Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
-    <url>www.salty-lake-15597.herokuapp.com/</url>
+    <url>www.salty-lake-15597.herokuapp.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
