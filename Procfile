@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -war target/servlet-1.0-SNAPSHOT.war
+web: java $JAVA_OPTS -jar target/dependency/servlet-1.0-SNAPSHOT.jar --port $PORT target/*.war
