@@ -9,7 +9,7 @@
 
         <!-- Assume test is the database name -->
         <property name="hibernate.connection.url">
-            https://www.cleardb.com/service/1.0/api
+            jdbc:mysql://us-cdbr-east-03.cleardb.com:3306/heroku_b3c72a2657ff503
         </property>
         <property name="hibernate.connection.username">b1b659b2bfa070</property>
         <property name="hibernate.connection.password">34c832e1</property>
