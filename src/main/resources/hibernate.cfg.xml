@@ -9,7 +9,7 @@
 
         <!-- Assume test is the database name -->
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost/servlet?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC
+            mysql://b1b659b2bfa070:34c832e1@us-cdbr-east-03.cleardb.com/heroku_b3c72a2657ff503?reconnect=true
         </property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">paranido2</property>
