@@ -9,10 +9,10 @@
 
         <!-- Assume test is the database name -->
         <property name="hibernate.connection.url">
-            mysql://b1b659b2bfa070:34c832e1@us-cdbr-east-03.cleardb.com/heroku_b3c72a2657ff503?reconnect=true
+            https://www.cleardb.com/service/1.0/api
         </property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">paranido2</property>
+        <property name="hibernate.connection.username">b1b659b2bfa070</property>
+        <property name="hibernate.connection.password">34c832e1</property>
 
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
